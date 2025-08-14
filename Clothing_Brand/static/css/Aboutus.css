@@ -1,0 +1,124 @@
+/* aboutus.css */
+
+/* Container Styling */
+#about-page .page-content {
+    display: flex;
+    flex-direction: row; /* Ensure items are side by side */
+    align-items: center; /* Vertically centers items */
+    width: 100%; /* Occupies full viewport width */
+    padding: 0; /* Remove padding to utilize full width */
+    box-sizing: border-box; /* Includes padding in total width */
+    margin: 0; /* Removes any default margins */
+  }
+  
+  /* Styling for the image container */
+  #about-page .about-image {
+    flex: 1; /* Occupies 50% of the container */
+    /* Optional: Add padding or margins if desired */
+    /* padding-right: 20px; */
+  }
+  
+  #about-page .about-image img {
+    width: 100%; /* Ensures image fills its container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes bottom whitespace */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+  }
+  
+  /* Styling for the text container */
+  #about-page .about-text {
+    flex: 1; /* Occupies the remaining 50% of the container */
+    padding-left: 40px; /* Adds space between image and text */
+    text-align: justify; /* Justifies text for even alignment */
+  }
+  
+  /* Heading Styling */
+  #about-page .about-text h1 {
+    font-size: 36px; /* Adjust heading size as needed */
+    margin-bottom: 20px; /* Space below heading */
+    color: #333; /* Darker color for better readability */
+  }
+  
+  /* Paragraph Styling */
+  #about-page .about-text p {
+    font-size: 18px; /* Adjust paragraph text size */
+    line-height: 1.6; /* Improves readability */
+    color: #555; /* Slightly lighter than heading */
+    margin-bottom: 15px; /* Space between paragraphs */
+  }
+  
+  /* CTA Button Styling */
+  #about-page .about-text .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #414141; /* Example color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #about-page .about-text .cta-button:hover {
+    background-color: #827876; /* Darker shade on hover */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1200px) {
+    #about-page .about-text {
+      padding-left: 30px; /* Adjust padding for slightly smaller screens */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    #about-page .page-content {
+      flex-direction: column; /* Stacks items vertically */
+      padding: 20px; /* Adds padding around content */
+    }
+  
+    #about-page .about-image,
+    #about-page .about-text {
+      flex: none; /* Resets flex property */
+      width: 100%; /* Ensures full width */
+      padding: 0; /* Removes padding */
+      margin-bottom: 20px; /* Adds space between stacked items */
+    }
+  
+    #about-page .about-text {
+      padding-left: 0; /* Removes left padding */
+      text-align: left; /* Aligns text to the left on small screens */
+    }
+  
+    #about-page .about-text h1 {
+      font-size: 32px; /* Slightly smaller heading */
+    }
+  
+    #about-page .about-text p {
+      font-size: 17px; /* Slightly smaller text */
+    }
+  
+    #about-page .about-text .cta-button {
+      padding: 8px 16px; /* Adjusts padding for smaller screens */
+      font-size: 14px; /* Adjusts font size */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    #about-page .page-content {
+      padding: 10px; /* Further reduces padding */
+    }
+  
+    #about-page .about-text h1 {
+      font-size: 28px; /* Further reduces heading size */
+    }
+  
+    #about-page .about-text p {
+      font-size: 16px; /* Further reduces text size */
+    }
+  
+    #about-page .about-text .cta-button {
+      padding: 6px 12px; /* Further adjusts padding */
+      font-size: 13px; /* Further adjusts font size */
+    }
+  }
+  

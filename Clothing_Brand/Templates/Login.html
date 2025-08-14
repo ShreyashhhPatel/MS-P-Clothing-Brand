@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, 
+                           initial-scale=1.0"
+    />
+    <title>Sign in / Sign up</title>
+  </head>
+  <style>
+    /* Importing Google Fonts */
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+
+    /* Universal box sizing */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto Slab", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 30px;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 2)),
+        /* Gradient overlay */ url("../images/wriothesley.jpg") no-repeat center
+          center fixed; /* Background image */
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .title {
+      font-family: "Noto Serif", serif; /* Apply Noto Serif font */
+      font-weight: 700; /* Set to bold */
+      font-size: 60px; /* Increase the font size */
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      height: 700px;
+      width: 600px;
+      background: rgba(0, 0, 0, 0.7); /* More transparent to see background */
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 0.8s ease;
+    }
+
+    .btn {
+      height: 50px;
+      width: 400px;
+      margin: 20px auto;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: #222;
+    }
+
+    .login,
+    .signup {
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      position: relative;
+      cursor: pointer;
+      color: #fff;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .login:hover,
+    .signup:hover {
+      color: #ddd;
+      transform: scale(1.05);
+    }
+
+    .slider {
+      height: 50px;
+      width: 200px;
+      border-radius: 5px;
+      background: #333;
+      position: absolute;
+      top: 20px;
+      left: 100px;
+      transition: all 0.5s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .moveslider {
+      left: 300px;
+    }
+
+    .form-section {
+      height: 600px;
+      width: 1200px;
+      padding: 20px 0;
+      display: flex;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      left: 0;
+    }
+
+    .form-section-move {
+      left: -600px;
+    }
+
+    .login-box,
+    .signup-box {
+      gap: 20px;
+      height: 100%;
+      width: 100%; /* Take full width of parent container */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px; /* Padding inside the form */
+    }
+
+    .ele {
+      height: 50px;
+      width: 100%; /* Take full width of parent */
+      max-width: 500px; /* Set a max width to avoid overflow */
+      outline: none;
+      border: none;
+      color: #fff;
+      background-color: #111; /* Darker input background */
+      border-radius: 5px;
+      padding: 0 15px;
+      font-size: 16px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.7);
+      transition: all 0.3s ease;
+    }
+
+    .ele::placeholder {
+      color: #aaa;
+    }
+
+    .ele:focus {
+      background-color: #222;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1),
+        inset 0 2px 5px rgba(0, 0, 0, 0.7);
+      transform: scale(1.02);
+    }
+
+    .gender-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%; /* Take full width of parent */
+      max-width: 500px;
+      background-color: #111;
+      border-radius: 5px;
+      padding: 0 15px;
+      height: 50px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .gender-container label {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .gender-container input[type="radio"] {
+      margin-right: 8px;
+      accent-color: #444;
+    }
+
+    .clkbtn {
+      height: 50px;
+      width: 200px;
+      border-radius: 5px;
+      background: #222;
+      font-size: 18px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .clkbtn:hover {
+      background: #333;
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 650px) {
+      .container {
+        height: 700px;
+        width: 350px;
+      }
+
+      .title {
+        font-size: 18px;
+      }
+
+      .btn {
+        width: 250px;
+      }
+
+      .slider {
+        height: 40px;
+        width: 125px;
+        left: 62.5px;
+      }
+
+      .moveslider {
+        left: 187.5px;
+      }
+
+      .form-section {
+        height: 600px;
+        width: 700px;
+      }
+
+      .form-section-move {
+        left: -350px;
+      }
+
+      .login-box,
+      .signup-box {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .ele {
+        height: 40px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .gender-container {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .clkbtn {
+        height: 40px;
+        width: 150px;
+      }
+    }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <h3 class="title">MS&P Clothing</h3>
+    </header>
+
+    <!-- container div -->
+    <div class="container">
+      <!-- upper button section to select
+           the login or signup form -->
+      <div class="slider"></div>
+      <div class="btn">
+        <button class="login">Login</button>
+        <button class="signup">Signup</button>
+      </div>
+
+      <!-- Form section that contains the
+           login and the signup form -->
+      <div class="form-section">
+        <!-- login form -->
+        <form class="login-box" method="post">
+          {% csrf_token %}
+          {{ login_form.username }}
+          {{ login_form.password }}
+          <input class="clkbtn" type="submit" name="login" value="Login">
+        </form>
+
+        <!-- signup form -->
+        <form method="post" class="signup-box">
+          {% csrf_token %}
+          {{ signup_form.username }}
+          {{ signup_form.email }}
+          {{ signup_form.password }}
+          {{ signup_form.confirm_password }}
+          {{ signup_form.birth_date }}
+          {{ signup_form.gender }}
+          <input type="submit" name="signup" value="signup" class="clkbtn">
+      </form>
+      {% if code == 404 %}
+      <script>window.alert("Password Mismatch !")</script>
+      {% elif code == 403 %}
+      <script>window.alert("User Not Found !")</script>
+      {% elif code == 401 %}
+      <script>window.alert("User Already Exists !")</script>
+      {% elif code == 201 %}
+      <script>window.alert("User Created Successfully !")</script>
+      {% endif %}
+    </div>
+    <script>
+      let signup = document.querySelector(".signup");
+      let login = document.querySelector(".login");
+      let slider = document.querySelector(".slider");
+      let formSection = document.querySelector(".form-section");
+
+      signup.addEventListener("click", () => {
+        slider.classList.add("moveslider");
+        formSection.classList.add("form-section-move");
+      });
+
+      login.addEventListener("click", () => {
+        slider.classList.remove("moveslider");
+        formSection.classList.remove("form-section-move");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Fixed Back Button */
+  .side-back-button {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background-color: #007BFF;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+  }
+  
+  .side-back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Section Styles */
+  .page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .text-content {
+    max-width: 600px;
+    margin: 0 20px;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .text-content.animated {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .side-image {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .side-image.left {
+    transform: translateX(-200px);
+  }
+  
+  .side-image.right {
+    transform: translateX(200px);
+  }
+  
+  .side-image.animated {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  /* Scroll Button */
+  .scroll-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px 16px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .scroll-button.animated {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .scroll-button:hover {
+    background-color: #1e7e34;
+  }
+  

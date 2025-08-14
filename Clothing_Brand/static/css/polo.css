@@ -1,0 +1,100 @@
+/* Polo Page Styles */
+
+#polo-content .text,
+#polo-content .tagline {
+  opacity: 0;
+}
+
+#polo-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#polo-content .image-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Adjusted to fill the page height */
+  overflow: hidden;
+}
+
+#polo-content .image-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#polo-content .image-container li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide all slides by default */
+}
+
+#polo-content .image-container li.active {
+  display: block; /* Show only the active slide */
+}
+
+.polo-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* Prevent background image repetition */
+}
+
+.polo-image-1,
+.polo-image-2,
+.polo-image-3 {
+  /* Gradient and background image for each slide */
+}
+
+.polo-image-1 {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url('../images/polo1.jpg');
+}
+
+.polo-image-2 {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url('../images/polo2.jpg');
+}
+
+.polo-image-3 {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url('../images/polo3.jpg');
+}
+
+#polo-content .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+#polo-content .text h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+#polo-content .text p {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 10px;
+}

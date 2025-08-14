@@ -1,0 +1,83 @@
+/* Contact Page Styles */
+#contact-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center; /* Centers content vertically */
+  }
+  #contact-content h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px; /* Spacing */
+  }
+  .contact-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+  }
+  .contact-form,
+  .contact-info {
+    flex: 1;
+    padding: 20px;
+  }
+  .contact-container > div:not(:last-child) {
+    margin-right: 40px; /* Gap between form and socials */
+  }
+  .contact-form h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .contact-form form {
+    width: 100%;
+    color: inherit;
+  }
+  .contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .contact-form button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .contact-form button:hover {
+    background-color: #555;
+  }
+  .contact-info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .social-icons {
+    list-style: none;
+    padding: 0;
+  }
+  .social-icons li {
+    margin-bottom: 10px;
+  }
+  .social-icons a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+  }
+  .social-icons a i {
+    margin-right: 10px;
+  }
+  

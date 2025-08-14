@@ -1,0 +1,101 @@
+/* Suits Page Styles */
+
+/* Container for the image and overlays */
+.suits-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Suit Image Styling */
+.suits-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient Overlay Styling */
+.image-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Linear gradient from transparent to semi-transparent black */
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.8)
+  );
+  z-index: 2;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* Text Overlay Styling */
+.suits-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 3;
+  padding: 20px;
+}
+
+.suits-text h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.suits-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.shop-now-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffffffaa; /* Semi-transparent white */
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.shop-now-button:hover {
+  background-color: #ffffff;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .suits-text h1 {
+    font-size: 40px;
+  }
+
+  .suits-text p {
+    font-size: 18px;
+  }
+
+  .shop-now-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .suits-text h1 {
+    font-size: 30px;
+  }
+
+  .suits-text p {
+    font-size: 10px;
+  }
+
+  .shop-now-button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

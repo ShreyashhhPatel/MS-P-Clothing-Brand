@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MS&P Clothing</title>
+
+  <!-- Google Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS File -->
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'css/team.css' %}" />
+</head>
+<body>
+  <!-- Fixed Back Button -->
+  <a href="/" class="side-back-button">
+    <i class="material-icons">arrow_back</i> Back
+  </a>
+
+  <!-- Section 1: Home -->
+  <section class="page" id="home">
+    <div class="content-wrapper">
+      <img src="{% static 'images/team/1.jpeg' %}" alt="Tailor Team Left" class="side-image left" loading="lazy">
+      <div class="text-content">
+        <h1>Tailor Team</h1>
+        <p>
+          Our Visionary Artisans: Our skilled tailors are the heart of our brand. With years of experience and a passion for perfection, they transform fabric into wearable art. Each piece is a testament to their dedication and craftsmanship.
+        </p>
+        <a href="#production" class="scroll-button">Learn More <i class="material-icons">arrow_downward</i></a>
+      </div>
+      <img src="{% static 'images/team/2.jpeg' %}" alt="Tailor Team Right" class="side-image right" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Section 2: Production -->
+  <section class="page" id="production">
+    <div class="content-wrapper">
+      <img src="{% static 'images/team/3.jpeg' %}" alt="Production Team Left" class="side-image left" loading="lazy">
+      <div class="text-content">
+        <h1>Production Team</h1>
+        <p>
+          Behind the Scenes: Our production team is the engine that drives our operations. They work tirelessly to ensure that every order is processed efficiently and accurately.
+        </p>
+        <h2>State-of-the-Art Technology</h2>
+        <p>We utilize the latest technology to streamline our production process. This allows us to maintain high levels of quality and efficiency.</p>
+      </div>
+      <img src="{% static 'images/team/4.jpeg' %}" alt="Production Team Right" class="side-image right" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Section 3: Management -->
+  <section class="page" id="management">
+    <div class="content-wrapper">
+      <img src="{% static 'images/team/5.jpeg' %}" alt="Management Team Left" class="side-image left" loading="lazy">
+      <div class="text-content">
+        <h1>Management Team</h1>
+        <p>
+          Leading the Way: Our management team is dedicated to providing exceptional service and innovative products. With a focus on customer satisfaction and employee empowerment, they drive our business forward.
+        </p>
+        <p>
+          We believe in fostering a positive and collaborative work environment. Our management team is committed to creating a culture of excellence, where creativity and innovation are encouraged.
+        </p>
+      </div>
+      <img src="{% static 'images/team/6.jpeg' %}" alt="Management Team Right" class="side-image right" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Section 4: About Us -->
+  <section class="page" id="about">
+    <div class="content-wrapper">
+      <img src="{% static 'images/team/7.jpeg' %}" alt="About Us Left" class="side-image left" loading="lazy">
+      <div class="text-content">
+        <h1>About Us</h1>
+        <p>Our Sustainability Initiatives:</p>
+        <ul>
+          <li><strong>Eco-Friendly Materials:</strong> We source sustainable fabrics and materials to reduce our carbon footprint.</li>
+          <li><strong>Ethical Sourcing:</strong> We partner with suppliers who prioritize fair labor practices and ethical sourcing.</li>
+          <li><strong>Waste Reduction:</strong> We implement efficient production processes to minimize waste and conserve resources.</li>
+          <li><strong>Recycling and Upcycling:</strong> We recycle and upcycle materials whenever possible to reduce our environmental impact.</li>
+        </ul>
+      </div>
+      <img src="{% static 'images/team/8.jpeg' %}" alt="About Us Right" class="side-image right" loading="lazy">
+    </div>
+  </section>
+
+  <!-- JavaScript File -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{% static 'js/about.js'%}"></script>
+</body>
+</html>

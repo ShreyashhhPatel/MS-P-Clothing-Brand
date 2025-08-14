@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MS&P Clothing</title>
+    <!-- Google Fonts and Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Social Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pzwPbVNFYd1zOHVvUONjxhqSvbIaqO6iXVY0GFDFR9xYG1emxAXeIfAG1LR+W6pGCTZGicbQDs93Z3iV8aJlYQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS Files -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/suits.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/polo.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Aboutus.css' %}" />
+  </head>
+  <body>
+    <div class="center">
+      <div class="content">
+        <div class="nav">
+          <div class="logo">MS&P</div>
+          <a href="#" class="title" data-page="0">Home</a>
+          <a href="#" class="title" data-page="1">Suits</a>
+          <a href="#" class="title" data-page="2">Polo</a>
+          <a href="#" class="title" data-page="3">About</a>
+          <a href="#" class="title" data-page="4">Contact</a>
+          <a href="cart" class="title">Tote bag</a>
+          {% if auth == True %}
+          <a href="logout" class="title">Logout</a>
+          {% elif auth == False %}
+          <a href="login" class="title">Login</a>
+          {% endif %} {% if admin == True %}
+          <a href="adminpage" class="title">Admin</a>
+          {% endif %}
+        </div>
+
+        <!-- Home Page -->
+        <div class="page" id="home-page">
+          <div class="page-content" id="home-content">
+            <div class="images-container">
+              <img
+                src="https://images.unsplash.com/photo-1503727824955-2a5122ce8057?q=80&w=1964&auto=format&fit=crop"
+                alt="MS&P Clothing Image 1"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1620063224601-ead11b9737bf?q=80&w=1887&auto=format&fit=crop"
+                alt="MS&P Clothing Image 2"
+              />
+            </div>
+            <div class="text">
+              <h1>MS&P Clothing</h1>
+              <p>
+                We're three friends with a passion for fashion, and we're
+                excited to share our vision with you. Our brand is born from a
+                desire to create clothing that is both stylish and comfortable.
+                We believe that everyone deserves to look and feel their best,
+                and we're committed to providing high-quality garments that
+                reflect your unique personality.
+              </p>
+              <p>Join us on this exciting journey as we redefine style.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suits Page -->
+        <div class="page" id="suits-page">
+          <div class="page-content" id="suits-content">
+            <div class="suits-image">
+              <img src="{% static 'images/suits.jpg' %}" alt="Suit Image" />
+              <div class="image-gradient"></div>
+              <div class="suits-text">
+                <h1>Suits</h1>
+                <p>
+                  Upgrade your wardrobe with our suits on sale. Experience
+                  luxury and refinement at discounted prices. Elevate your style
+                  and command attention with tailored perfection. Don't miss
+                  this chance to own a suit that exudes elegance and
+                  sophistication.
+                </p>
+                <br />
+                <a href="suits" class="shop-now-button">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polo Page -->
+        <div class="page" id="polo-page">
+          <div class="page-content" id="polo-content">
+            <div class="image-container">
+              <ul id="polo-slider">
+                <li>
+                  <div class="polo-image polo-image-1"></div>
+                </li>
+                <li>
+                  <div class="polo-image polo-image-2"></div>
+                </li>
+                <li>
+                  <div class="polo-image polo-image-3"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="text">
+              <h1>Polo T-Shirts</h1>
+              <p>
+                Elevate your style without breaking the bank! Our polo shirts
+                are now on sale, offering premium quality and timeless design at
+                unbeatable prices. Don't miss this opportunity to upgrade your
+                wardrobe with comfort, class, and incredible savings. Shop now
+                and experience the perfect blend of fashion and affordability.
+              </p>
+              <br />
+              <a href="{% url 'polo' %}" class="shop-now-button">Shop now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Us Page -->
+        <div class="page" id="about-page">
+          <div class="page-content">
+            <div class="about-image">
+              <img
+                src="{% static 'images/Aboutus.jpeg' %}"
+                alt="About MS&P Clothing"
+              />
+            </div>
+            <div class="about-text">
+              <h1>About Us</h1>
+              <p>
+                We're three friends with a passion for fashion, and we're
+                excited to share our vision with you. Our brand is born from a
+                desire to create clothing that is both stylish and comfortable.
+                We believe that everyone deserves to look and feel their best,
+                and we're committed to providing high-quality garments that
+                reflect your unique personality.
+              </p>
+              <p>Join us on this exciting journey as we redefine style.</p>
+              <a href="{% url 'aboutus' %}" class="cta-button">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Us Page -->
+        <div class="page" id="contact-page">
+          <div class="page-content" id="contact-content">
+            <h1>Contact Us</h1>
+            <div class="contact-container">
+              <!-- Contact Form Section -->
+              <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contact-form">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required />
+
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required />
+
+                  <label for="message">Message:</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    required
+                  ></textarea>
+
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+              <!-- Social Media Section -->
+              <div class="contact-info">
+                <h2>Connect With Us</h2>
+                <ul class="social-icons">
+                  <li>
+                    <a href="#" target="_blank">
+                      <i class="fab fa-facebook-square"></i> Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://x.com/ShreyashPa25214?t=XV1JD5SuezJWIgGOyeLEJw&s=09"
+                      target="_blank"
+                    >
+                      <i class="fab fa-twitter-square"></i> Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/shhrryyy__?igsh=MWwwZjcyOXZid3dwMA=="
+                      target="_blank"
+                    >
+                      <i class="fab fa-instagram-square"></i> Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/shreyashv-patel/"
+                      target="_blank"
+                    >
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include jQuery BEFORE main.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JavaScript File -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
